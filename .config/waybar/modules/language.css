@@ -1,0 +1,13 @@
+#language {
+    font-family: 'Fira Code', monospace;
+    color: @text0;
+    border-radius: 10px;
+    background-color: @background0;
+    padding: 0 10px;
+    transition: background 0.3s;
+}
+
+#language:hover {
+    background: @background1;
+    color: @text1;
+}

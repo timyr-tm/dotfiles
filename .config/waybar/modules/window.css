@@ -1,0 +1,6 @@
+#window {
+    background: @background0;
+    color: @text0;
+    border-radius: 10px;
+    padding: 0px 10px;
+}

@@ -1,0 +1,9 @@
+default-action=hyprctl dispatch focuswindow "app_name"
+font="FiraCode 8"
+background-color=#1e1e2e
+text-color=#585b70
+border-size=0
+border-radius=10
+padding=10,10,10,10
+group-by=app-name
+progress-color=over #89b4fa

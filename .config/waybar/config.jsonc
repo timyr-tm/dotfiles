@@ -1,0 +1,86 @@
+{
+    "height": 34,
+    "spacing": 10,
+    "margin": "10 10 5 10", 
+    // modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "hyprland/language",
+        "battery"
+    ],
+
+    "hyprland/window": {
+        "icon": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "$1"
+        }
+    },
+
+    "network": {
+        "interval": 1,
+        "format-wifi": "{icon} {essid}",
+        "tooltip-format-wifi": "󱚺 Up:    {bandwidthUpBits}\n󱚶 Down:  {bandwidthDownBits}\n󱚸 Total: {bandwidthTotalBits}",
+        "format-icons": {
+            "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+            "ethernet": ["󱳑", "󰈀"],
+            "linked": ["󰤫", "󰤠", "󰤣", "󰤦", "󰤩"]
+        }
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "scroll-step": 5.0,
+        "format-muted": "󰝟",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "states": {
+            "warning": 70,
+            "critical": 30
+        }
+    },
+
+    // modules / workspaces
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "show-special": true,
+        "format-icons": {
+            "default": "󰧞",
+            "active": "󰻃",
+            "special": "󰦤",
+            "urgent": "󰗖"
+        }
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "󰃰  {:%Y.%m.%d %H:%M:%S}",
+        "tooltip": false
+    },
+
+    "hyprland/language": {
+        "format-en": "🇺🇸 en",
+        "format-ru": "🇷🇺 ru"
+    },
+
+    // modules / battery
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+            "plugged": "󰂄",
+            "empty": "󱃍"
+        },
+        "states": {
+            "warning": 30,
+            "critical": 10
+        }
+    }
+}
