@@ -1,0 +1,66 @@
+* {
+    background-color: #00000000;
+    text-color: #cdd6f4;
+    font: "FiraCode 12";
+}
+
+configuration {
+    display-drun: "󰍉";
+}
+
+window {
+    children: [inputbar, listview];
+    padding: 10px;
+    background-color: #1e1e2e;
+    border-radius: 10px;
+    width: calc(100% / 3);
+}
+
+inputbar {
+    children: [icon-search, entry];
+    margin: 5px 0 5px 0;
+    padding: 5px;
+}
+
+icon-search {
+    expand: false;
+    filename: "/usr/share/icons/Papirus-Dark/16x16/actions/search.svg";
+    size: 24;
+}
+
+entry {
+    margin: 0 0 0 5px;
+}
+
+listview {
+    children: [element, scrollbar];
+    lines: 8;
+    spacing: 0px;
+    dynamic: true;
+    scrollbar: true;
+}
+
+element {
+    children: [element-icon, element-text];
+    margin: 5px 0 5px 0;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0;
+}
+
+element-icon {
+    size: 24px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    margin: 0 0 0 5px;
+}
+
+element selected {
+    background-color: #313244;
+}
+
+element-text selected {
+    text-color: #89b4fa;
+}
