@@ -2,6 +2,6 @@
 Type=Application
 Name=Audio
 GenericName=Selecting an audio output device
-GenericName[ru]=test
+GenericName[ru]=Выбор устройства вывода звука
 Icon=audio-volume-high
 Exec=rofi -show audio -theme audio
