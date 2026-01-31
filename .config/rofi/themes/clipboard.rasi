@@ -1,0 +1,46 @@
+configuration {
+    modes: "clipboard";
+    kb-remove-char-forward: "";
+    kb-delete-entry: "";
+    kb-custom-1: "Delete";
+    kb-custom-2: "Shift+Delete";
+}
+
+
+* {
+    font: "FiraCode 12";
+    background-color: #00000000;
+    text-color: #cdd6f4;
+}
+
+window {
+    children: [listview];
+    background-color: #1e1e2e;
+    border-radius: 10px;
+    width: 700px;
+}
+
+listview {
+    children: [element];
+    lines: 10;
+}
+
+element {
+    children: [element-text];
+    margin: 5px 0 5px 0;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    margin: 0;
+}
+
+element selected {
+    background-color: #313244;
+}
+
+element-text selected {
+    text-color: #89b4fa;
+}
+
+element-icon {
+    size: 24px;
+}
