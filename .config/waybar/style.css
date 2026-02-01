@@ -1,21 +1,16 @@
+@import "./theme/catppuccin/mocha.css";
+@import "./modules/workspaces.css";
+@import "./modules/window.css";
+@import "./modules/clock.css";
+@import "./modules/tray.css";
+@import "./modules/network.css";
+@import "./modules/pulseaudio.css";
+@import "./modules/language.css";
+@import "./modules/battery.css";
 
-/* theme */
-@import "theme/catppuccin/mocha.css";
-
-@define-color background0 @base;
-@define-color background1 @surface0;
-@define-color text0 @surface2;
-@define-color text1 @blue;
-
-/* modules */
-@import "modules/workspaces.css";
-@import "modules/clock.css";
-@import "modules/language.css";
-@import "modules/battery.css";
-@import "modules/pulseaudio.css";
-@import "modules/network.css";
-@import "modules/window.css";
-
-window {
+* {
+    font-family: 'Fira Code';
+    font-size: 16px;
     background-color: rgba(0, 0, 0, 0);
+    color: @text0;
 }

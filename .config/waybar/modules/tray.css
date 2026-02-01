@@ -1,10 +1,13 @@
-#language {
+#tray {
     background: @background0;
     border-radius: 10px;
     padding: 0 10px;
 }
 
-#language:hover {
+#tray menu {
+    background: @background0;
+}
+
+#tray menu > *:hover {
     background: @background1;
-    color: @text1;
 }

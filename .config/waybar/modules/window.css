@@ -1,10 +1,13 @@
 #window {
     background: @background0;
-    color: @text0;
     border-radius: 10px;
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 
-window#waybar.empty #window {
-    background: none;
+#window:hover {
+    background-color: @background1;
+}
+
+#window:hover > label {
+    color: @text1;
 }

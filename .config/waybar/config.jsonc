@@ -11,11 +11,17 @@
         "clock"
     ],
     "modules-right": [
+        "tray",
         "network",
         "pulseaudio",
         "hyprland/language",
         "battery"
     ],
+
+    "tray": {
+        "show-passive-items": true,
+        "spacing": 5
+    },
 
     "hyprland/window": {
         "icon": true,
@@ -26,14 +32,15 @@
     },
 
     "network": {
-        "interval": 1,
         "format-wifi": "{icon} {essid}",
-        "tooltip-format-wifi": "󱚺 Up:    {bandwidthUpBits}\n󱚶 Down:  {bandwidthDownBits}\n󱚸 Total: {bandwidthTotalBits}",
+        "format-disconnected": " Disconnected",
+        "format-ethernet": "󰈁 Ethernet",
+        "format-linked": "{icon} Linked",
         "format-icons": {
-            "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-            "ethernet": ["󱳑", "󰈀"],
-            "linked": ["󰤫", "󰤠", "󰤣", "󰤦", "󰤩"]
-        }
+            "wifi": ["󰤯", "󰤟", "󰤥", "󰤨"],
+            "linked": ["󰣾", "󰣴", "󰣶", "󰣺"]
+        },
+        "tooltip-format": "󱚺 {bandwidthUpBits}\n󱚶 {bandwidthDownBits}\n󱦂 {ipaddr}"
     },
 
     "pulseaudio": {
@@ -62,13 +69,14 @@
 
     "clock": {
         "interval": 1,
-        "format": "󰃰  {:%Y.%m.%d %H:%M:%S}",
+        "format": "󰃰 {:%Y.%m.%d %H:%M:%S}",
         "tooltip": false
     },
 
     "hyprland/language": {
-        "format-en": "🇺🇸 en",
-        "format-ru": "🇷🇺 ru"
+        "format-en": "en",
+        "format-ru": "ru",
+        "on-click": "hyprctl switchxkblayout current next"
     },
 
     // modules / battery

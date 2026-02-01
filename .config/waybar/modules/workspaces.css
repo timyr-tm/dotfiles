@@ -1,14 +1,21 @@
-#workspaces {
-    background: @base;
-    border-radius: 10px;
-    padding: 0px 5px;
-}
-
 #workspaces > button {
-    background: none;
     border-radius: 0;
-    border: none;
+    background: @background0;
     box-shadow: none;
     text-shadow: none;
-    color: white;
+    border: none;
+    color: @text0;
+}
+
+#workspaces > button:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+#workspaces > button:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+#workspaces > button:hover {
+    background-color: @background1;
+    color: @text1;
 }
