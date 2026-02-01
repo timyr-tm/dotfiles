@@ -5,22 +5,30 @@ import sys
 import subprocess
 import json
 
-settings: dict[str, str] = {
-    "use-hot-keys": "true"
-}
+icons: list[str] = ["󰕿", "󰖀", "󰕾"]
+
+def label(id: str, name: str, volume: int, muted: bool) -> str:
+    return print(
+        f"{id!s}\0display\x1f",
+        f"{(icons[i] if (i := round((volume / 100) * 3) - 1) >= 0 else icons[0] ) if volume <= 100 else icons[2]} ",
+        f"{name:<32}",
+        *[chr({1: 0xEE00, 30: 0xEE02}.get(i, 0xEE01) + (3 * int(i < round(volume / 5)))) for i in range(1, 31)],
+        f" {volume!s:>4}%",
+        sep=""
+    )
 
 def main(*args) -> None:
-    print("\0", "\x1f".join([item for data in settings.items() for item in data]), sep="")
+    print("\0use-hot-keys\x1ftrue")
 
     if len(args) > 0:
         retv: int = int(os.getenv("ROFI_RETV"))
         actions: dict[int, list[str]] = {
-            1: ["pactl", "set-default-sink", args[0]],
             10: ["pactl", "set-sink-volume", args[0], "-5%"],
             11: ["pactl", "set-sink-volume", args[0], "-1%"],
             12: ["pactl", "set-sink-volume", args[0], "+5%"],
             13: ["pactl", "set-sink-volume", args[0], "+1%"]
         }
+        subprocess.run(["pactl", "set-default-sink", args[0]])
         if retv in actions:
             subprocess.run(actions[retv])
 
@@ -42,18 +50,16 @@ def main(*args) -> None:
             sink["properties"]["node.nick"]
         ]
     )
-            
-    for sink in sinks:
-        print(
-            f"{sink["name"]}\0"
-            f"icon\x1f"
-            f"{sink["properties"]["device.icon_name"]}\x1f"
-            f"display\x1f"
-            f"{sink["properties"]["node.nick"][:32]:<32} │ "
-            f"{("▰" * round(int(sink["volume"]["front-left"]["value_percent"][:-1]) / 10))[:15]:▱<15} │ "
-            f"{sink["volume"]["front-left"]["value_percent"]:>4}\x1f"
+
+    for num, sink in enumerate(sinks):
+        label(
+            sink["name"],
+            sink["properties"]["node.nick"],
+            max([int(value["value_percent"][:-1]) for value in sink["volume"].values()]),
+            sink["mute"]
         )
-    
+        
+
 
 if __name__ == "__main__":
     main(*sys.argv[1:])
