@@ -20,7 +20,7 @@ window {
     children: [listview];
     background-color: #1e1e2e;
     border-radius: 10px;
-    width: 700px;
+    width: 720px;
 }
 
 listview {
@@ -29,11 +29,10 @@ listview {
 }
 
 element {
-    children: [element-icon, element-text];
+    children: [element-text];
     margin: 5px 0 5px 0;
     border-radius: 10px;
-    padding: 5px;
-    margin: 0;
+    padding: 5px 10px 5px 10px;
 }
 
 element selected {
@@ -42,8 +41,4 @@ element selected {
 
 element-text selected {
     text-color: #89b4fa;
-}
-
-element-icon {
-    size: 24px;
 }
