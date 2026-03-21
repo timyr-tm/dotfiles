@@ -3,3 +3,4 @@ text/plain=code.desktop;
 
 [Default Applications]
 text/plain=code.desktop;
+x-scheme-handler/discord=vesktop.desktop

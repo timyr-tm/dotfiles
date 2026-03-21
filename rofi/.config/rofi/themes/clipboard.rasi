@@ -6,7 +6,6 @@ configuration {
     kb-custom-2: "Shift+Delete";
 }
 
-
 * {
     font: "FiraCode 12";
     background-color: #00000000;
@@ -17,7 +16,6 @@ window {
     children: [listview];
     background-color: #1e1e2e;
     border-radius: 10px;
-    width: 700px;
 }
 
 listview {

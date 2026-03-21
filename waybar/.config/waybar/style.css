@@ -7,6 +7,7 @@
 @import "./modules/pulseaudio.css";
 @import "./modules/language.css";
 @import "./modules/battery.css";
+@import "./modules/tooltip.css";
 
 * {
     font-family: 'Fira Code';
