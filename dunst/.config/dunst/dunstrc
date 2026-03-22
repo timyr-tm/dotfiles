@@ -1,0 +1,7 @@
+[global]
+offset = (10, 5)
+padding = 0
+horizontal_padding = 5
+text_icon_padding = 5
+text_icon_padding = 5
+font = "FiraCode Nerd Font Mono 16px"
